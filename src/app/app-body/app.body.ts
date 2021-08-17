@@ -4,6 +4,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { HttpClient,HttpClientModule,HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 document.addEventListener('scroll',GetActiveContainer);
@@ -22,7 +23,7 @@ function GetActiveContainer():void {
     let homeCtNumHeight = document.getElementsByClassName('homeContainers');
 
     let activeDivNum = homeContainerNum - Math.round((maxHeight-window.pageYOffset - 200)/600);
-    
+
 
     const homeContainers = Array.from(document.getElementsByClassName('homeContainers'));
     homeContainers.forEach(element => {
@@ -72,7 +73,7 @@ function GetActiveContainer():void {
             animate('1s')
           ])
       ]),
-      /*trying to trigger 
+      /*trying to trigger
       trigger('backgroundSwitching',[
         state('waya',style({
             backgroundImage: 'url(../assets/body-images/waya-min.png)'
@@ -108,6 +109,15 @@ export class AppBodyComponent{
     show:number[] = [];
 
 
+    sendForm = new FormGroup({
+      name: new FormControl('',[Validators.required]),
+      mail: new FormControl('', [Validators.required, Validators.email]),
+      phone: new FormControl('', Validators.required),
+      topic: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required)
+    })
+
+
     //From this we are starting to send the data from form to a file via POST
     //which we can't really test because of this page is running on localhost only, not on webserver and we don't even have
     //wamp/lamp-server installed yet. But I believe in this. Let's get back to learn!
@@ -120,8 +130,8 @@ export class AppBodyComponent{
     URL:string="";
     //get values from mail popup
     SendMail(val:string[]):Observable<any>{
-        
-        this.URL = "https://mypage.my/sendData/mailSender";
+
+        this.URL = "https://";
         const headers = new Headers();
         headers.append('Content-Type','application/json');
         let data = "firstData = 5";
@@ -139,7 +149,7 @@ export class AppBodyComponent{
         this.canReset = false;
         if(toImage && element){
             let elBgChange = document.getElementById(element);
-            if(elBgChange){                
+            if(elBgChange){
                 elBgChange.style.backgroundImage = 'url(../assets/body-images/'+toImage+'-min.png)';
             };
         }
@@ -155,6 +165,12 @@ export class AppBodyComponent{
             }
         },2000);
     }
+
+    submitForm(){
+      console.log();
+
+    }
+
 
     @HostListener('document:keydown.escape', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
