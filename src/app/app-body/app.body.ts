@@ -167,7 +167,11 @@ export class AppBodyComponent{
     }
 
     submitForm(){
-      console.log();
+
+      if(this.sendForm.valid){
+        console.log(this.sendForm.value);
+
+      }
 
     }
 
