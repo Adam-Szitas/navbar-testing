@@ -1,0 +1,22 @@
+<head>
+  <title>{{ title }}</title>  
+</head>
+<body>
+<nav class="my-navbar">
+  <ul class="nav-ul">
+    <div class="">
+      <li *ngFor="let el of navItems" class="nav-item dropdown" [class]="el.orientation">
+        <div *ngIf="el.orientation == 'left'" (click)="ScrollTo(el.value)" class="left">
+          <fa-icon [icon]="el.icon"></fa-icon>
+          <a click>{{ el.button }}</a>
+        </div>
+        <div *ngIf="el.orientation == 'right'" (click)="ScrollTo(el.value)" class="right">
+          <fa-icon [icon]="el.icon"></fa-icon>
+          <a click>{{ el.button }}</a>
+        </div>
+      </li>
+    </div>
+  </ul>
+</nav>
+<app-body></app-body>
+</body>
