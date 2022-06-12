@@ -199,7 +199,7 @@ export class AppBodyComponent{
         {
             divClasses: ['middle pd-t-5 hoverBgT'],
             divId: 'portfolio',
-            including: "You can check some works I made. These have simple and complicated functions with reason -> Everything for the Customer needs! My AIM is to serve the Customers which includes not just one-time job but service either.",
+            including: "You can check some works I made. These have simple and complicated functions with reason -> Everything for the Customer needs! My AIM is to serve the Customers which includes not just one-time job but service too.",
             style: ["background-position: center; background-repeat: no-repeat; background-size: cover; filter: saturate(30%)"],
             id: 'switchBgImage',
             buttons: [{

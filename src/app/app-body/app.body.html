@@ -1,64 +1,62 @@
-<body>
-    <div @openCloseOverlay>
-        <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container fixed middle">
-            <h2>Send your mail easily here!</h2>
-            <form class="middle" [formGroup]="sendForm" (submit)="submitForm()">
-                <div class="row middle">
-                    <div class="middle">
-                        <label>Name</label>
-                        <input type="text" name="Name" #Name placeholder="Name" formControlName="name" />
-                        <label>E-mail</label>
-                        <input type="text" name="eMail" #Email placeholder="E-mail" formControlName="mail" />
-                    </div>
+<div @openCloseOverlay>
+    <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container fixed middle">
+        <h2>Send your mail easily here!</h2>
+        <form class="middle" [formGroup]="sendForm" (submit)="submitForm()">
+            <div class="row middle">
+                <div class="middle">
+                    <label>Name</label>
+                    <input type="text" name="Name" #Name placeholder="Name" formControlName="name" />
+                    <label>E-mail</label>
+                    <input type="text" name="eMail" #Email placeholder="E-mail" formControlName="mail" />
                 </div>
-                <div class="row middle">
-                    <div class="middle">
-                        <label>Phone number</label>
-                        <input type="text" name="phoneNumber" #Phone placeholder="Phone number" formControlName="phone" />
-                        <label>Topic</label>
-                        <input type="text" name="topic" #Topic placeholder="Topic" formControlName="topic" />
-                    </div>
+            </div>
+            <div class="row middle">
+                <div class="middle">
+                    <label>Phone number</label>
+                    <input type="text" name="phoneNumber" #Phone placeholder="Phone number" formControlName="phone" />
+                    <label>Topic</label>
+                    <input type="text" name="topic" #Topic placeholder="Topic" formControlName="topic" />
                 </div>
-                <div class="row middle">
-                    <div class="middle">
-                        <label>Description</label>
-                        <textarea class="middle" #Description name="description" formControlName="description">
+            </div>
+            <div class="row middle">
+                <div class="middle">
+                    <label>Description</label>
+                    <textarea class="middle" #Description name="description" formControlName="description">
                         </textarea>
-                    </div>
                 </div>
-                <div class="row middle">
-                    <div class="right">
-                        <button type="submit">Send</button>
-                    </div>
+            </div>
+            <div class="row middle">
+                <div class="right">
+                    <button type="submit">Send</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
+</div>
 
-    <div *ngFor="let di of divs" [attr.class]="di.divClasses" [attr.id]="di.divId">
-        <div [attr.style]="di.style" [attr.id]="di.id">
-            <div [ngClass]="{'rg-bgo-black' : di.style}" class="middle homeContainers">
-                <p style="color: white; font-size: 30px; font-weight: bold;" class="middle">{{ di.divId }}</p>
-                <div class="hidden">
-                    <a>{{ di.including }}</a>
-                    <div *ngFor="let but of di.buttons" class="df">
-                        <button (click)="Relocate(but.link)" [attr.class]="but.buttonClass" (mouseleave)="setBgBackToStart(di.id)" (mouseenter)="ChangeBackgroundImage(but.background,di.id)">{{ but.button }}</button>
-                    </div>
-                    <div *ngIf="di.controls" class="df iContainer">
-                        <div *ngFor="let ctrl of di.controls; let i = index" class="block">
-                            <img [attr.src]="ctrl.icon" (mouseenter)="show[i] = 1" (mouseout)="show[i] = 0">
-                            <div class="absolute {{ show[i] ? '' : 'hidden'}} popUpIcons">
-                                {{ ctrl.script }}
-                            </div>
+<div *ngFor="let di of divs" [attr.class]="di.divClasses" [attr.id]="di.divId">
+    <div [attr.style]="di.style" [attr.id]="di.id">;
+        <div [ngClass]="{'rg-bgo-black' : di.style}" class="middle homeContainers">
+            <p style="color: white; font-size: 30px; font-weight: bold;" class="middle">{{ di.divId }}</p>
+            <div class="hidden">
+                <a>{{ di.including }}</a>
+                <div *ngFor="let but of di.buttons" class="df">
+                    <button (click)="Relocate(but.link)" [attr.class]="but.buttonClass" (mouseleave)="setBgBackToStart(di.id)" (mouseenter)="ChangeBackgroundImage(but.background,di.id)">{{ but.button }}</button>
+                </div>
+                <div *ngIf="di.controls" class="df iContainer">
+                    <div *ngFor="let ctrl of di.controls; let i = index" class="block">
+                        <img [attr.src]="ctrl.icon" (mouseenter)="show[i] = 1" (mouseout)="show[i] = 0">
+                        <div class="absolute {{ show[i] ? '' : 'hidden'}} popUpIcons">
+                            {{ ctrl.script }}
                         </div>
                     </div>
-                    <div *ngIf="di.list">
-                        <li class="w-100 pd-20 block underline contact" [class]="listItem.middle ? 'middle' : 'left'" style="border-bottom: 1px solid white" *ngFor="let listItem of di.list">
-                            <a class="left">{{ listItem.left }}</a><a class="middle" *ngIf="listItem.middle" style="border: 2px solid white" (click)="toggle()">{{ listItem.middle }}</a><a class="right">{{ listItem.right }}</a>
-                        </li>
-                    </div>
+                </div>
+                <div *ngIf="di.list">
+                    <li class="w-100 pd-20 block underline contact" [class]="listItem.middle ? 'middle' : 'left'" style="border-bottom: 1px solid white" *ngFor="let listItem of di.list">
+                        <a class="left">{{ listItem.left }}</a><a class="middle" *ngIf="listItem.middle" style="border: 2px solid white" (click)="toggle()">{{ listItem.middle }}</a><a class="right">{{ listItem.right }}</a>
+                    </li>
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>

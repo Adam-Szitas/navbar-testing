@@ -1,32 +1,32 @@
-$OBSeven: rgba(0,0,0,0.7);
-$OBEight: rgba(0,0,0,0.8);
-$OBTwo: rgba(0,0,0,0.2);
-$OGTwo: rgba(0,100,20,0.8);
-$OWFive: rgba(255,255,255,0.5);
-
-  @keyframes containerHomeHover {
-    0%{
-      background-size: cover;
+$OBSeven: rgba(0, 0, 0, 0.7);
+$OBEight: rgba(0, 0, 0, 0.8);
+$OBTwo: rgba(0, 0, 0, 0.2);
+$OGTwo: rgba(0, 100, 20, 0.8);
+$OWFive: rgba(255, 255, 255, 0.5);
+@keyframes containerHomeHover {
+    0% {
+        background-size: cover;
     }
     100% {
-      background-size: auto;
+        background-size: auto;
     }
-  }
-  @keyframes fadeIn {
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 1;
-    }
-  }
+}
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
-*{
+* {
     box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-body{
+
+body {
     height: 100%;
     width: 100%;
     padding: 0;
@@ -43,7 +43,8 @@ body{
     overflow: hidden;
     padding-bottom: 50px;
 }
-nav{
+
+nav {
     height: 60px;
     width: 90%;
     padding: 0;
@@ -53,26 +54,32 @@ nav{
     z-index: 5;
     background-color: white;
 }
-nav > *{
-  text-transform: uppercase;
+
+nav>* {
+    text-transform: uppercase;
 }
-a{
+
+a {
     color: white;
     font-weight: 400;
 }
+
 ul {
     list-style-type: none;
     height: 60px;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: linear-gradient($OBTwo,$OBEight);
-  }
-  
-  li > *{
+    background: linear-gradient($OBTwo, $OBEight);
+}
+
+li>* {
     cursor: pointer;
-  }
-  li a, .dropbtn, li fa-icon {
+}
+
+li a,
+.dropbtn,
+li fa-icon {
     display: inline-block;
     color: white;
     text-align: center;
@@ -80,50 +87,57 @@ ul {
     text-decoration: none;
     font-size: 24px;
     font-weight: 600;
-  }
-  
-  li:hover, .dropdown:hover .dropbtn {
+}
+
+li:hover,
+.dropdown:hover .dropbtn {
     background: linear-gradient($OBEight, $OBEight);
-  }
-  
-  li.dropdown {
+}
+
+li.dropdown {
     display: inline-block;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px $OBTwo;
     z-index: 1;
-  }
-  
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
-  }
-  
-  .dropdown-content a:hover {background-color: #d1d1d1;}
-  
-  .dropdown:hover .dropdown-content {
+}
+
+.dropdown-content a:hover {
+    background-color: #d1d1d1;
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
-  }
-  .homeContainers{
+}
+
+.homeContainers {
     height: 600px;
     padding: 10%;
-  }
-  .homeContainers div{
+}
+
+.homeContainers div {
     margin-top: 20px;
-  }
-  .homeContainers.activeHomeContainer > div{
+}
+
+.homeContainers.activeHomeContainer>div {
     animation: fadeIn 1s;
     opacity: 1;
-  }
-  .homeContainers button{
+}
+
+.homeContainers button {
     padding: 5px 15px;
     font-size: 26px;
     color: white;
@@ -131,30 +145,34 @@ ul {
     background-color: $OBEight;
     border-radius: 0;
     border: 0;
-    box-shadow: 3px 1px rgba(200,200,200,0.4);
+    box-shadow: 3px 1px rgba(200, 200, 200, 0.4);
     transition: all .5s ease-in-out;
-  }
-  .homeContainers button:hover{
-    background-color: rgba(80,80,80,0.8);
+}
+
+.homeContainers button:hover {
+    background-color: rgba(80, 80, 80, 0.8);
     padding: 5px 25px;
     text-decoration: underline;
     transition: all .5s ease-in-out;
-  }
+}
 
-  .homeContainers p{
+.homeContainers p {
     text-transform: uppercase;
-  }
-  .homeContainers a{
+}
+
+.homeContainers a {
     font-size: 20px;
-  }
-  .hoverBgT{
+}
+
+.hoverBgT {
     background-repeat: no-repeat;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     -o-transition: all .5s;
     transition: all .5s;
-  }
-  .hoverBgT:hover{
+}
+
+.hoverBgT:hover {
     transform: scale(1.2);
     -ms-transform: scale(1.2);
     -moz-transform: scale(1.2);
@@ -162,179 +180,214 @@ ul {
     -o-transform: scale(1.2);
     padding-left: -10%;
     padding-right: -10%;
-  }
-  .hoverBgT:hover div{
+}
+
+.hoverBgT:hover div {
     transition: background-size inherit 1s ease-in-out;
-  }
-  .hoverBgT:hover .rg-bgo-black{
-    background: radial-gradient($OBSeven,$OBSeven);
-  }
-  #switchBgImage{
+}
+
+.hoverBgT:hover .rg-bgo-black {
+    background: radial-gradient($OBSeven, $OBSeven);
+}
+
+#switchBgImage {
     transition: all .5s;
-  }
-  .hoverBgT button:hover #switchBgImage{
+}
+
+.hoverBgT button:hover #switchBgImage {
     height: auto;
-  }
-  .iContainer{
-    background-color: rgba(250,250,250,0.8);
+}
+
+.iContainer {
+    background-color: rgba(250, 250, 250, 0.8);
     width: 100%;
     height: 100%;
-  }
-  .iContainer div:not(.popUpIcons){
+}
+
+.iContainer div:not(.popUpIcons) {
     position: inherit;
     float: left;
     flex-basis: 20%;
     width: auto;
-  }
-  .iContainer img{
+}
+
+.iContainer img {
     -webkit-transform: rotateZ(360deg) scale(0);
     -moz-transform: rotateZ(360deg) scale(0);
     -ms-transform: rotateZ(360deg) scale(0);
     -o-transform: rotateZ(360deg) scale(0);
     transform: rotateZ(360deg) scale(0);
-
     -webkit-transition: -webkit-transform 0.5s;
     -moz-transition: -moz-transform 0.5s;
     -ms-transition: -ms-transition 0.5s;
     -o-transition: -o-transform 0.5s;
     transition: transform 0.5s;
-
     position: relative;
     display: inline;
     height: 10vh;
     max-height: 140px;
     margin: 2vh;
-  }
-  .iContainer img:hover{
+}
+
+.iContainer img:hover {
     cursor: pointer;
     padding: 10px;
-  }
-  @media only screen and (orientation: portrait), (max-width: 1800px) {
-    .iContainer img{
-      width: 5vw;
-      height: auto;
-      max-width: 100px;
-      margin: 0;
+}
+
+@media only screen and (orientation: portrait),
+(max-width: 1800px) {
+    .iContainer img {
+        width: 5vw;
+        height: auto;
+        max-width: 100px;
+        margin: 0;
     }
-    .popUpIcons{
-      font-size: 16px;
+    .popUpIcons {
+        font-size: 16px;
     }
-  }
-  .homeContainers.activeHomeContainer .iContainer img{
+}
+
+.homeContainers.activeHomeContainer .iContainer img {
     -webkit-transform: rotateZ(0deg) scale(1);
     -moz-transform: rotateZ(0deg) scale(1);
     -ms-transform: rotateZ(0deg) scale(1);
     -o-transform: rotateZ(0deg) scale(1);
     transform: rotateZ(0deg) scale(1);
-  }
-  .hoverBgT{
+}
+
+.hoverBgT {
     animation: fadeIn 1s;
-  }
-  @media only screen and (orientation: portrait), (min-height: 1080px){
-    .homeContainers .iContainer img{
-      -webkit-transform: rotateZ(0deg) scale(1);
-      -moz-transform: rotateZ(0deg) scale(1);
-      -ms-transform: rotateZ(0deg) scale(1);
-      -o-transform: rotateZ(0deg) scale(1);
-      transform: rotateZ(0deg) scale(1);
-    }
-    
-    .homeContainers > div{
-      animation: fadeIn 1s;
-      opacity: 1;
-    }
-  }
+}
 
-  .hidden{
+@media only screen and (orientation: portrait),
+(min-height: 1080px) {
+    .homeContainers .iContainer img {
+        -webkit-transform: rotateZ(0deg) scale(1);
+        -moz-transform: rotateZ(0deg) scale(1);
+        -ms-transform: rotateZ(0deg) scale(1);
+        -o-transform: rotateZ(0deg) scale(1);
+        transform: rotateZ(0deg) scale(1);
+    }
+    .homeContainers>div {
+        animation: fadeIn 1s;
+        opacity: 1;
+    }
+}
+
+.hidden {
     opacity: 0;
-  }
-  .df{
-    display: flex;
-  }
-  .df > *{
-    flex-basis: 33.33%;
-  }
-  .inline{
-    display: inline;
-  }
-  button:hover{
-    cursor: pointer;
-  }
+}
 
-  .uppercase{
+.df {
+    display: flex;
+}
+
+.df>* {
+    flex-basis: 33.33%;
+}
+
+.inline {
+    display: inline;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.uppercase {
     text-transform: uppercase;
-  }
-  .left{
+}
+
+.left {
     float: left;
     text-align: left;
-  }
-  .right{
+}
+
+.right {
     float: right;
     text-align: right;
-  }
-  .middle{
+}
+
+.middle {
     margin: 0 auto;
     text-align: center;
-  }
-  .mg-25-auto{
+}
+
+.mg-25-auto {
     margin: 25px auto;
-  }
-  .pd-b-15{
+}
+
+.pd-b-15 {
     padding-bottom: 15px;
-  }
-  .pd-t-5{
+}
+
+.pd-t-5 {
     padding-top: 5px;
-  }
-  .pd-t-b-15{
+}
+
+.pd-t-b-15 {
     padding-top: 15px;
     padding-bottom: 15px;
-  }
-  .rg-bgo-black{
-    background: radial-gradient(rgba(128,128,128,0.2),$OBEight);
-  }
-  .block{
+}
+
+.rg-bgo-black {
+    background: radial-gradient(rgba(128, 128, 128, 0.2), $OBEight);
+}
+
+.block {
     display: block;
-  }
-  .w-100{
+}
+
+.w-100 {
     width: 100%;
-  }
-  .pd-20{
+}
+
+.pd-20 {
     padding: 20px;
-  }
-  .underline{
+}
+
+.underline {
     text-decoration: underline;
-  }
-  .contact a.middle:hover{
+}
+
+.contact a.middle:hover {
     background-color: $OWFive;
-  }
-  .absolute{
+}
+
+.absolute {
     position: absolute !important;
-  }
-  .relative{
+}
+
+.relative {
     position: relative !important;
-  }
-  .fixed{
+}
+
+.fixed {
     position: fixed !important;
-  }
-  .open-close-container{
+}
+
+.open-close-container {
     z-index: 0;
     width: 60vw;
     margin: 10%;
     margin-top: 5%;
     background-color: transparent;
-  }
+}
 
-  .row{
+.row {
     display: flex;
-  }
-  form .row{
+}
+
+form .row {
     width: 90%;
     margin: 5% auto;
-  }
-  .row p{
+}
+
+.row p {
     color: black;
-  }
-  .row div input{
+}
+
+.row div input {
     flex-basis: 100%;
     margin: 2%;
     margin-top: 20px;
@@ -343,28 +396,32 @@ ul {
     width: 46%;
     font-size: 26px;
     border: 2px solid grey;
-  }
-  .row div textarea{
+}
+
+.row div textarea {
     width: 40vw;
     margin-top: 20px;
     height: 140px;
     font-size: 24px;
     border: 2px solid grey;
-  }
-  .row div label{
+}
+
+.row div label {
     position: absolute;
     margin-left: 20px;
     height: 20px;
     font-size: 20px;
-  }
-  .row button{
+}
+
+.row button {
     position: relative;
     text-align: right;
     float: right;
     right: 0;
     font-size: 26px;
-  }
-  .popUpIcons{
+}
+
+.popUpIcons {
     white-space: pre-line;
     background-color: aliceblue;
     margin-left: -80px;
@@ -372,4 +429,48 @@ ul {
     border-radius: 15px;
     padding: 15px;
     font-size: 1vw;
-  }
+}
+
+//capture service
+// div.captureBox {
+//     position: fixed;
+//     width: 100vw;
+//     height: 100vh;
+//     margin: 0;
+//     display: flex;
+//     z-index: 55;
+//     left: 0;
+//     top: 0;
+//     background: transparent;
+//     & img {
+//         position: relative;
+//         width: 100%;
+//         height: 100%;
+//     }
+// }
+.leftImage {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    margin-top: 0;
+    margin-left: 0;
+    clip: rect(0, calc(100% - 50%), calc(100% - 0), 0);
+    object-fit: cover;
+    object-position: left;
+}
+
+.rightImage {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 5;
+    right: 0;
+    top: 0;
+    margin-top: 0;
+    margin-right: 0;
+    object-fit: cover;
+    object-position: right;
+}

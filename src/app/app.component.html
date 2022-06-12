@@ -1,22 +1,27 @@
 <head>
-  <title>{{ title }}</title>  
+    <title>{{ title }}</title>
 </head>
-<body>
-<nav class="my-navbar">
-  <ul class="nav-ul">
-    <div class="">
-      <li *ngFor="let el of navItems" class="nav-item dropdown" [class]="el.orientation">
-        <div *ngIf="el.orientation == 'left'" (click)="ScrollTo(el.value)" class="left">
-          <fa-icon [icon]="el.icon"></fa-icon>
-          <a click>{{ el.button }}</a>
-        </div>
-        <div *ngIf="el.orientation == 'right'" (click)="ScrollTo(el.value)" class="right">
-          <fa-icon [icon]="el.icon"></fa-icon>
-          <a click>{{ el.button }}</a>
-        </div>
-      </li>
-    </div>
-  </ul>
-</nav>
-<app-body></app-body>
+
+<body #screen>
+    <img *ngIf="img" src="{{ img }}" class="leftImage" [@w-50]="img ? 'w-0' : 'w-full'">
+    <img *ngIf="img" src="{{ img }}" class="rightImage" [@w-50]="img ? 'w-0' : 'w-full'">
+
+    <nav class="my-navbar">
+        <ul class="nav-ul">
+            <div class="">
+                <button class="capture" type="button" (click)="Capture()">Capture</button>
+                <li *ngFor="let el of navItems" class="nav-item dropdown" [class]="el.orientation">
+                    <div *ngIf="el.orientation == 'left'" (click)="ScrollTo(el.value)" class="left">
+                        <fa-icon [icon]="el.icon"></fa-icon>
+                        <a click>{{ el.button }}</a>
+                    </div>
+                    <div *ngIf="el.orientation == 'right'" (click)="ScrollTo(el.value)" class="right">
+                        <fa-icon [icon]="el.icon"></fa-icon>
+                        <a click>{{ el.button }}</a>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <app-body></app-body>
 </body>
